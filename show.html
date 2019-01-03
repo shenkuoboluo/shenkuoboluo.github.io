@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0"/>
+		<title>资料分享</title>
+		<script type="text/javascript" src="js/vue.min.js"></script>
+	<link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+	<script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<style>
+			.classshow{
+				background-color: #C9E2B3;
+
+				
+			}
+			</style>
+	</head>
+	<body>
+
+		<div class="container" id="vueapp">
+			<div class="row clearfix">
+				<div class="col-md-12 column">
+	
+	<nav class="navbar navbar-default" role="navigation">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#example-navbar-collapse">
+					<span class="sr-only">切换导航</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="index.html">
+				写给任小姐的考研小站</a>
+			</div>
+			<div class="collapse navbar-collapse" id="example-navbar-collapse">
+				<ul class="nav navbar-nav">
+				<li v-for="item in items">
+					<a v-bind:href="item.url" v-bind:class="{'classshow': item.classaction}">{{item.name}}</a>
+				</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+				</div>
+			</div>
+			<div class="row clearfix">
+				<div class="col-md-12 column">
+					<div class="list-group">
+						<ul class="nav nav-pills">
+							<li  v-for="ietm in datasource" v-bind:class="{'active':ietm.classaction}"  style="margin-top:20px;margin-left:10px;">
+								<a v-bind:href="ietm.url"> <span class="badge pull-right">99+</span> {{ietm.name}}</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script>
+			var vm = new Vue({
+				el: '#vueapp',
+				data: {
+					items: [{
+							url: 'time.html',
+							name: '范围大纲',
+							classaction: false
+						},
+						{
+							url: 'show.html',
+							name: '资料分享',
+							classaction: true
+						},
+						{
+							url: 'import.html',
+							name: '重大节点',
+							classaction: false
+						},
+						{
+							url: 'story.html',
+							name: '写在最后',
+							classaction: false
+						}
+					],
+					datasource :[{
+						name:'百度一下',
+						classaction: false,
+						url:'http://www.baidu.com'
+					},{
+						name:'河北考研网',
+						classaction: true,
+						url:'https://yz.chsi.com.cn/yzwb/'
+					},{
+						name:'梦想的大学',
+						classaction:true ,
+						url:'http://www.bucm.edu.cn/'
+					},{
+						name:'考研帮',
+						classaction: false,
+						url:'http://yz.kaoyan.com/bucm/chengji/'
+					}
+					]
+				},
+				computed: {
+
+				},
+				watch: {
+
+				},
+				directives: {}
+			})
+		</script>
+
+	</body>
+</html>

@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0"/>
+		<title>重大节点</title>
+		<script type="text/javascript" src="js/vue.min.js"></script>
+		<link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+	<script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<style>
+			.classshow{
+				background-color: #C9E2B3;
+
+				
+			}
+			</style>
+	</head>
+	<body>
+
+		<div class="container" id="vueapp">
+			<div class="row clearfix">
+				<div class="col-md-12 column">
+				
+				<nav class="navbar navbar-default" role="navigation">
+					<div class="container-fluid">
+						<div class="navbar-header">
+							<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#example-navbar-collapse">
+								<span class="sr-only">切换导航</span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+							</button>
+							<a class="navbar-brand" href="index.html">
+							写给任小姐的考研小站</a>
+						</div>
+						<div class="collapse navbar-collapse" id="example-navbar-collapse">
+							<ul class="nav navbar-nav">
+							<li v-for="item in items">
+								<a v-bind:href="item.url" v-bind:class="{'classshow': item.classaction}">{{item.name}}</a>
+							</li>
+							</ul>
+						</div>
+					</div>
+				</nav>
+				</div>
+			</div>
+			<div class="row clearfix">
+				<div class="col-md-12 column">
+
+					<table class="table table-striped table-hover table-condensed">
+						<thead>
+							<tr>
+								<th>
+									no
+								</th>
+								<th>
+									日期
+								</th>
+								<th>
+									事件
+								</th>
+								<th>
+									时间
+								</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr v-for="item in datasource" v-bind:class="{'success':item.stat}">
+
+								<td>
+									{{item.no}}
+
+								</td>
+								<td>
+									{{item.date}}
+								</td>
+								<td>
+									{{item.name}}
+								</td>
+								<td>
+									{{item.datetime}}
+								</td>
+							</tr>
+						</tbody>
+					</table>
+
+				</div>
+			</div>
+		</div>
+		<script>
+			var vm = new Vue({
+				el: '#vueapp',
+				data: {
+					items: [{
+							url: 'time.html',
+							name: '范围大纲',
+							classaction: false
+						},
+						{
+							url: 'show.html',
+							name: '资料分享',
+							classaction: false
+						},
+						{
+							url: 'import.html',
+							name: '重大节点',
+							classaction: true
+						},
+						{
+							url: 'story.html',
+							name: '写在最后',
+							classaction: false
+						}
+					],
+					datasource: [{
+						no: '1',
+						date: '2019/9/24-27',
+						name: '应届生网上预报名',
+						datetime: '9:00-22:00',
+						stat: true
+					}, {
+						no: '2',
+						date: '2019/10/10-31',
+						name: '网上报名',
+						datetime: '9:00-22:00',
+						stat: false
+					}, {
+						no: '3',
+						date: '2019/12/14-12/24',
+						name: '打印准考证',
+						datetime: '9:00-22:00',
+						stat: true
+
+					}, {
+						no: '4',
+						date: '2019/12/23-24',
+						name: '初试笔试',
+						datetime: '8:30-17:00',
+						stat: false
+					}, {
+						no: '5',
+						date: '2020/02/?',
+						name: '初试结果公布',
+						datetime: 'https://yz.chsi.com.cn/yzwb/',
+						stat: true
+					}, {
+						no: '6',
+						date: '2020/03/?',
+						name: '复试面试',
+						datetime: 'whatever',
+						stat: false
+
+					}, {
+						no: '7',
+						date: '2020/04/?',
+						name: '最后结果',
+						datetime: '解放了',
+						stat: true
+					}]
+				},
+				computed: {
+
+				},
+				watch: {
+				
+				},
+				directives: {
+
+				},
+				filters: {
+				}
+			})
+		</script>
+
+	</body>
+</html>
