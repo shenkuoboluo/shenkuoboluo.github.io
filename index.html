@@ -1,11 +1,111 @@
 ﻿<!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-	<head>
-		<meta charset="UTF-8">
-		<title>测试页面</title>
+<head>
+	<title>儿子群</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- 引入 Bootstrap -->
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
 
-	</head>
-	<body>
-<h1>你个兰州烧饼</h1>
-	</body>
+	<!-- HTML5 Shiv 和 Respond.js 用于让 IE8 支持 HTML5元素和媒体查询 -->
+	<!-- 注意： 如果通过 file://  引入 Respond.js 文件，则该文件无法起效果 -->
+	<!--[if lt IE 9]>
+	<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+	<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+	<![endif]-->
+</head>
+
+
+
+	<div class="container">
+		<div class="row clearfix">
+			<div class="col-md-12 column">
+				<h3>
+					饭局记录
+				</h3>
+				<table class="table">
+					<thead>
+					<tr>
+						<th>
+							编号
+						</th>
+						<th>
+							请客人
+						</th>
+						<th>
+							条件
+						</th>
+						<th>
+							时间
+						</th>
+					</tr>
+					</thead>
+					<tbody>
+					<tr>
+						<td>
+							1
+						</td>
+						<td>
+							博文/光
+						</td>
+						<td>
+							无
+						</td>
+						<td>
+							2020.国庆
+						</td>
+					</tr>
+					<tr class="success">
+						<td>
+							2
+						</td>
+						<td>
+							大笔
+						</td>
+						<td>
+							考上公务员
+						</td>
+						<td>
+							2021.过年
+						</td>
+					</tr>
+					<tr class="error">
+						<td>
+							3
+						</td>
+						<td>
+							光
+						</td>
+						<td>
+							刘考上研
+						</td>
+						<td>
+							2021.暑假
+						</td>
+					</tr>
+					<tr class="warning">
+						<td>
+							4
+						</td>
+						<td>
+							刘
+						</td>
+						<td>
+							刘考上研
+						</td>
+						<td>
+							2021.暑假
+						</td>
+					</tr>
+
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+
+
+<script src="https://code.jquery.com/jquery.js"></script>
+<!-- 包括所有已编译的插件 -->
+<script src="js/bootstrap.min.js"></script>
+
 </html>
